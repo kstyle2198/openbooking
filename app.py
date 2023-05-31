@@ -113,7 +113,7 @@ def main():
     
     # 예약 날짜 구간
     min_date = date.today()
-    interval = timedelta(hours=720)  #예약가능구간 15일 부여
+    interval = timedelta(hours=360)  #예약가능구간 15일 부여
     max_date = min_date + interval
     
 
