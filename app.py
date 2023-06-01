@@ -102,14 +102,14 @@ def main():
     st.set_page_config(page_title="🎈OpenBooking", page_icon="11", layout="wide")
 
     st.markdown("#### :green[서울 계동 ]")
-    st.markdown('### 🎉 :blue[리모트 오피스 예약 프로그램]')
+    st.markdown('### 🎉 :blue[리모트 오피스] 예약 프로그램')
     st.write('---')
 
     # Menu selection
     menu_options = ['Add Booking', 'Delete Booking']
     with st.sidebar:
-        st.header("🔅 **예약/취소는 사이드바에서!**")
-        st.markdown("##### ***:green[   📒 노션 안내 자료]*** : [link](https://www.notion.so/hyundaigenuine/3c5b039fe44f4eb0a303dc25dcb14cab?pvs=4)")
+        st.header("🔅 **예약 및 취소는 사이드바에서!**")
+        st.markdown("##### ***:green[📒 노션안내자료]*** : [link](https://www.notion.so/hyundaigenuine/3c5b039fe44f4eb0a303dc25dcb14cab?pvs=4)")
         menu_choice = st.sidebar.selectbox('🚀 **:blue[Select Menu]**', menu_options)
     
     # 예약 날짜 구간
@@ -122,12 +122,12 @@ def main():
     with st.expander("📢 ***주요 사항 안내***"):
         st.markdown("""
                     - 건설기계부문은 :blue[**10석**]을 배정받아 운영합니다. (사용 실적에 따라 조정)
-                    - 날짜별 미예약 테이블 넘버 현황에서 숫자가 table_number 입니다. ("예약" 글자 아닌 숫자가 기재된 부분이 예약 가능한 곳임)
-                    - 좌석번호(table_number)는 :red[***날짜별 예약가능번호***]를 의미하며, 실제 이용은 빈책상 임의 지정하여 사용하면 됩니다.
+                    - 날짜별 미예약 테이블 넘버 현황에서 숫자가 예약 가능한 table_number 입니다. ("예약" 글자 아닌 숫자가 기재된 부분)
+                    - 좌석번호(table_number)는 :red[***날짜별 예약가능번호***]를 의미하며, 실제 이용은 빈책상 임의 지정하여 사용하면 됩니다(완전자율좌석).
                     - Booking시 사번, 성명 정확히 입력 바랍니다. (HDX는 근태계도 상신 / 근태코드 : 리모트오피스)
                     - 동일 날짜에 1인이(동일 사번) 중복 예약 안됩니다.
-                    - 리모트오피스 이용 관련 안내사항은 사이드바 상단의 :green[노션 안내자료] 참고 바랍니다.
-                    - 이용상 문의사항은 메일로 연락 바랍니다.(jongbae.kim@hyundai-genuine.com)
+                    - 리모트오피스 위치, 출입, 식사 등 이용 관련 안내사항은 사이드바 상단의 :green[노션 안내자료] 참고 바랍니다.
+                    - 기타 이용상 문의사항은 메일로 연락 바랍니다.(jongbae.kim@hyundai-genuine.com)
                     """)
     
     tab1, tab2 = st.tabs(["🍉:red[**날짜별 미예약 테이블 넘버 현황**]", "🌻:blue[**예약자 리스트**]"])
@@ -208,7 +208,6 @@ def main():
             if st.button('🗑️ Delete Booking'):
                 if delete_booking(booking_id, 사번, booking_date):
                     st.experimental_rerun()
-
                 else:
                     st.error('🚫 예약번호, 사번, 날짜가 일치하는 대상이 없습니다.')          
 
