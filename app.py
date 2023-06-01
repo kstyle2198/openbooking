@@ -3,6 +3,7 @@ import sqlite3
 from datetime import datetime, date, timedelta
 import pandas as pd
 import numpy as np
+import os
 
 def create_table():
     conn = sqlite3.connect('bookings.db')
@@ -172,7 +173,8 @@ def main():
         with st.expander(""): 
             csv = convert_df(download_df(search_name))
             뭘까 = st.text_input("🕵️‍♂️ 다운로드", type="password")
-            if 뭘까 == "A422525":
+            download_key = os.getenv('download_key')
+            if 뭘까 == download_key:
                 val = False
             else: 
                 val = True

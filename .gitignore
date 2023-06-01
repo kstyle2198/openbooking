@@ -1,3 +1,4 @@
 .git
+.streamlit
 myenv
 bookings.db
