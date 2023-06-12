@@ -126,7 +126,7 @@ def main():
                     - 좌석번호(table_number)는 :red[***날짜별 예약가능번호***]를 의미하며, 실제 이용은 빈책상 임의 지정하여 사용하면 됩니다(완전자율좌석).
                     - Booking시 사번, 성명 정확히 입력 바랍니다. (HDX는 근태계도 상신 / 근태코드 : 리모트오피스)
                     - 동일 날짜에 1인이(동일 사번) 중복 예약 안됩니다.
-                    - 리모트오피스 위치, 출입, 식사 등 이용 관련 안내사항은 사이드바 상단의 :green[노션 안내자료] 참고 바랍니다.
+                    - 리모트오피스 :blue[**위치, 출입, 식사**] 등 이용 관련 안내사항은 사이드바 상단의 :green[노션 안내자료] 참고 바랍니다.
                     - 기타 이용상 문의사항은 메일로 연락 바랍니다.(jongbae.kim@hyundai-genuine.com)
                     """)
     
@@ -209,8 +209,15 @@ def main():
                 if delete_booking(booking_id, 사번, booking_date):
                     st.experimental_rerun()
                 else:
-                    st.error('🚫 예약번호, 사번, 날짜가 일치하는 대상이 없습니다.')          
-
+                    st.error('🚫 예약번호, 사번, 날짜가 일치하는 대상이 없습니다.')   
+                           
+    
+    with st.sidebar:
+        st.markdown("---")
+        with st.expander("🔒 개인정보처리방침"):
+            st.markdown('''
+                        - 본 프로그램상 수집하는 성명, 사번 등 개인정보는 회사의 개인정보관리규정에 따라 관리됩니다.                                           
+                        ''')
 
 if __name__ == "__main__":
     
