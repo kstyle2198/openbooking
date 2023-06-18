@@ -3,6 +3,18 @@
 [Streamlit app link](http://openbooking.streamlit.app)
 
 
-* 손봐야 할 사항들
-1. time zone 한국으로 변경 필요
-2. 예약시 선택하는 좌석 번호 미선택 좌석번호 리스트로 제공
+* 가상환경 설치
+```python
+virtualenv myenv --python=python3.10
+pip install -r requirements.txt
+```
+
+* 가상환경 기동
+```
+myenv\scripts\activate
+```
+
+* Streamlit app 실행
+```
+streamlit run app.py
+```
