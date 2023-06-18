@@ -221,5 +221,5 @@ def main():
 
 if __name__ == "__main__":
     
-    create_table()
+    # create_table()
     main()
